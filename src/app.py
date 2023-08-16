@@ -32,14 +32,14 @@ class WeatherStatsQueryParams(BaseModel):
 @app.get("/api/weather/")
 async def weather_home(params: WeatherQueryParams = Depends()):
     """
-    Endpoint to fetch weather data based on query parameters.
+        Endpoint to fetch weather statistics based on query parameters.
 
-    Parameters:
-        params (WeatherQueryParams): Pydantic model for query parameters.
-
-    Returns:
-        List[dict]: List of dictionaries containing weather data.
-    """
+        Parameters:
+            params (WeatherStatsQueryParams): Pydantic model for query parameters.
+            Example: Page: 1, Date: 1985-01-01 , Station USC00257715
+        Returns:
+            List[dict]: List of dictionaries containing weather statistics.
+        """
 
     db = SessionLocal()
     result = db.query(Weather)
