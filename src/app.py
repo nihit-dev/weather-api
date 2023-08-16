@@ -36,10 +36,12 @@ async def weather_home(params: WeatherQueryParams = Depends()):
 
         Parameters:
             params (WeatherStatsQueryParams): Pydantic model for query parameters.
-            Example: Page: 1, Date: 1985-01-01 , Station USC00257715
+
+        Example: Page: 1, Date: 1985-01-01 , Station USC00257715
+
         Returns:
             List[dict]: List of dictionaries containing weather statistics.
-        """
+    """
 
     db = SessionLocal()
     result = db.query(Weather)
